@@ -1,0 +1,123 @@
+/*Mixin adaptive*/
+
+@mixin ladge-desktop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (max-width: 1080px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin xgaplus {
+    @media screen and (max-width: 864px) {
+      @content;
+  }
+}
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin tabletphone {
+    @media screen and (max-width: 700px) {
+      @content;
+  }
+}
+
+@mixin ladgetablet {
+    @media screen and (max-width: 650px) {
+      @content;
+  }
+}
+
+@mixin middleTablet {
+    @media screen and (max-width: 600px) {
+      @content;
+  }
+}
+
+@mixin tablet-xs {
+    @media screen and (max-width: 520px) {
+      @content;
+  }
+}
+
+@mixin phone {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+@mixin oldphone {
+    @media screen and (max-width: 380px) {
+        @content;
+    }
+}
+
+
+/*Flex positiion*/
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin center-center {
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*Placeholder*/
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+@mixin placeholder {
+    @include optional-at-root('::-webkit-input-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root('::-moz-placeholder') {
+        @content;
+    }
+
+    @include optional-at-root(':-ms-input-placeholder') {
+        @content;
+    }
+}
+
+/*Buttons*/
+@mixin buttonsReset{
+    padding: 0;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;  
+    &:hover {
+        cursor: pointer;
+    }
+}
