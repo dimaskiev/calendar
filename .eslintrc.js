@@ -1,0 +1,39 @@
+
+
+module.exports = {
+    "globals": {
+"$": true,
+"jQuery": true,
+},
+"env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "node": true,
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module",
+    },
+    "rules": {
+        "comma-dangle": [
+            "error",
+            "always-multiline",
+      ],
+      "no-mixed-spaces-and-tabs": [2, false],
+      "indent": [2, 4],
+
+"quotes": [
+"error",
+"single",
+],
+"semi": [
+"error",
+"always",
+],
+"no-unused-vars": [
+"warn",
+],
+"no-console": 0,
+}
+};
