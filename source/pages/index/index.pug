@@ -1,0 +1,317 @@
+extends ../template
+block title
+    | Calendar page
+block content
+    .wrapper
+        header.header
+            .wrapper-section
+                .button-section
+                    button.btn.btn-add(name="add") Добавить
+                    button.btn.btn-refresh(name="refresh") Обновить
+                .search-section                
+                    label.search-label
+                        input.search(type="search" placeholder="Событие, дата или участник")
+        main.main
+            .wrapper-section
+                header.header-main
+                    .date-navigation
+                        button.month-btn.prev-month
+                        span.date.date-month Март &nbsp;
+                        span.date.date-year 2013
+                        button.month-btn.next-month
+                    .today
+                        button.today-btn Сегодня
+                section.calendar
+                    .row.first-row
+                        .day 
+                            .day-detail
+                                .weekday Понедельник,&nbsp;
+                                .weekday-mobile Пн
+                                .date 25
+                            .event
+                                .title
+                                .member
+                                .description
+                        .day
+                            .day-detail
+                                .weekday Вторник,&nbsp;
+                                .weekday-mobile Вт
+                                .date 26
+                            .event
+                                .title
+                                .member
+                                .description
+                        .day
+                            .day-detail
+                                .weekday Среда,&nbsp;
+                                .weekday-mobile Ср
+                                .date 27
+                            .event
+                                .title
+                                .member
+                                .description
+                        .day
+                            .day-detail
+                                .weekday Четверг,&nbsp;
+                                .weekday-mobile Чт
+                                .date 28
+                            .event
+                                .title
+                                .member
+                                .description
+                        .day
+                            .day-detail
+                                .weekday Пятница,&nbsp;
+                                .weekday-mobile Пт
+                                .date 1
+                            .event
+                                .title
+                                .member
+                                .description
+                        .day.today
+                            .day-detail
+                                .weekday Суббота,&nbsp;
+                                .weekday-mobile Сб
+                                .date 2
+                            .event
+                                .title
+                                .member
+                                .description
+                        .day
+                            .day-detail
+                                .weekday Воскресенье,&nbsp;
+                                .weekday-mobile Вс
+                                .date 3
+                            .event
+                                .title
+                                .member
+                                .description
+                    .row
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 4
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 5
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 6
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 7
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 8
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day.hasevents
+                            .day-detail
+                                .weekday
+                                .date 9
+                            .event
+                                .title Напиться
+                                .members Дима, Катя, Петя
+                                .description Очень сильно
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 10
+                            .event
+                                .title
+                                .members
+                                .description        
+                    .row
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 11
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 12
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 13
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 14
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 15
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 16
+                            .event
+                                .title
+                                .members
+                                .description                                
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 17
+                            .event
+                                .title
+                                .members
+                                .description        
+                    .row
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 18
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 19
+                            .event
+                                .title
+                                .members
+                                .description                                
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 20
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day.hasevents 
+                            .day-detail
+                                .weekday
+                                .date 21
+                            .event
+                                .title Опять Напиться
+                                .members Дима, Катя, Петя    
+                                .description Очень сильно                            
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 22
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 23
+                            .event
+                                .title
+                                .members
+                                .description                                
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 24
+                            .event
+                                .title
+                                .members
+                                .description
+                    .row
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 25
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 26
+                            .event
+                                .title
+                                .members
+                                .description                                
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 27
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 28
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 29
+                            .event
+                                .title
+                                .members
+                                .description                                
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 30
+                            .event
+                                .title
+                                .members
+                                .description
+                        .day
+                            .day-detail
+                                .weekday
+                                .date 31
+                            .event
+                                .title
+                                .members
+                                .description
+        .modal-events

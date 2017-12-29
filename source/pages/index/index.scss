@@ -1,0 +1,375 @@
+@import '../../common/app';
+
+.header{
+    background-color: $headerBgColor;
+    box-shadow: 1px 2px 3px #d0d0d0;
+    margin-bottom: 15px;
+    .wrapper-section{
+        @include flex-row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 50px 20px;
+        
+        @include middleTablet{
+            width: 100%;
+            padding: 20px 20px 10px;
+            flex-direction: column-reverse;
+            @include center-center;
+        }
+    }
+
+}
+
+.main{
+    @include flex-column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 65px;
+    @include laptop{
+        padding: 0 25px 65px;
+
+    }
+    @include tablet{
+        padding: 0 20px 65px;
+
+    }
+    @include tabletphone{
+        padding: 0 10px 65px;
+
+    }
+}
+
+.header-main{
+    @include flex-row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+    @include middleTablet{
+        @include center-center;
+    }
+}
+
+
+.date-navigation{
+    @include flex-row;
+    align-items: center;
+    justify-content: space-around;
+
+    .date{
+        font-size: 15px;
+        font-weight: 600;
+    }
+}
+.btn{
+    @include buttonsReset;
+    margin-right: 10px;
+    padding: 8px 15px;
+    background-color: $buttonColor;
+    border-radius: 5px;
+    color: $whiteColor;
+    font-size:12px;
+    font-weight: 600;
+
+    &:nth-child(2){
+        margin-right: 0px;
+    }
+    
+    &:hover{
+        cursor: pointer;
+        box-shadow: 1px 1px 1px $blackColor;
+    }
+
+    &:active{
+        box-shadow: -1px 1px 1px $blackColor inset;        
+    }
+}
+
+.month-btn{
+    @include buttonsReset;
+    width: 17px;
+    height: 17px;
+    position: relative;
+    //padding: 5px;
+    background-color: $headerBgColor;
+    border: 1px solid $placeHolderColor;
+    border-radius: 2px;
+    &:hover{
+        box-shadow: 1px 1px 1px $placeHolderColor;
+    }
+    &:active{
+        border: 1px solid $blackColor;
+    }
+
+    
+}
+
+.prev-month{
+    margin-right: 10px;
+    position: relative;
+    &:before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2px 4px 2px 0;
+        border-color: transparent $blackColor transparent transparent;
+    }
+}
+ .next-month{
+    margin-right: 10px;
+    margin-left: 10px;
+    
+    &:before{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2px 0 2px 4px;
+        border-color: transparent transparent transparent $blackColor;
+    }
+}
+
+.today-btn{
+    @include buttonsReset;
+    padding: 3px 8px;
+    background-color: $headerBgColor;
+    border: 1px solid $placeHolderColor;
+    border-radius: 5px;
+    &:hover{
+        box-shadow: 1px 1px 1px $placeHolderColor;
+    }
+    &:active{
+        border: 1px solid $blackColor;
+    }
+
+}
+
+.button-section{
+    @include middleTablet{
+        //@include flex-column;
+        @include center-center;
+    }
+}
+
+.search-section{
+    @include flex-row;
+    @include center-center;
+    
+    @include middleTablet{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    
+}
+
+.search-label{
+    width: inherit;
+    @include flex-row;
+    @include center-center;
+    &:before{
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        content: '';
+        margin-right: 15px;        
+        background-image: url(../../images/search.png);
+        background-size: contain; 
+        background-repeat: no-repeat;
+        
+        @include middleTablet{
+            margin-right: 5px;
+        }
+             
+    }
+    &:hover{
+        cursor: pointer;
+    }
+}
+.search{
+    padding: 0;
+    padding: 8px 15px;    
+    border: none;
+    outline: none;
+    padding: 8px;
+    width: 100%;
+    border: 1px solid $borderColor;
+    border-radius: 5px;
+    @include placeholder{
+        font-size: 11px;
+        color:  $placeHolderColor;
+    }
+}
+
+
+.calendar{
+    width: 100%;
+    @include flex-column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row{
+    width: 100%;
+    @include flex-row;
+    //align-items: center;
+    justify-content: space-between;
+    
+}
+
+.day{
+    min-height: 115px;
+    height: 146px;
+    flex: 1;
+    border: 1px solid $borderColor;
+    padding: 10px;
+    
+    @include laptop{
+        
+        height: 130px;
+
+    }
+    @include tablet{
+        height: auto;
+        padding: 8px;
+      
+
+    }
+    @include tablet-xs{
+        min-height: 85px;
+
+    }
+
+    @include middleTablet{
+        min-height: 75px;
+    }
+    @include tabletphone{
+        padding: 5px;
+
+    }
+    @include phone{
+        min-height: 60px;
+
+    }
+
+    @include oldphone{
+        min-height: 50px;
+
+    }
+
+    
+    &:hover{
+        background-color: #f7f7f7;
+    }
+
+       
+    .day-detail{
+        margin-bottom:5px;
+        @include flex-row;
+        justify-content: flex-start;
+
+       /* .first-row
+       @include xgaplus{
+           justify-content: space-around;
+        }*/
+        
+        .weekday {
+           
+
+            @include xgaplus{
+                display: none;
+            }
+        }
+        .weekday-mobile {
+            display: none;
+            text-transform: uppercase;
+
+            @include xgaplus{
+                display: inline-flex;
+            }
+        }
+    }
+
+    .event{
+        overflow: hidden;
+        max-height: 75px;
+    
+        .title {
+            font-weight: 600;
+            margin-bottom:5px;
+        }
+        .members {
+            font-weight: 300;
+            margin-bottom:5px;
+
+            @include middleTablet{
+                display: none;
+            }
+        }
+        .description{
+            
+        }
+
+        @include tablet-xs{
+            display: none;
+        }
+    }
+    
+    
+}
+
+.first-row{
+    .day-detail{
+        @include xgaplus{
+            justify-content: space-around;
+        }
+    }
+}
+
+.hasevents{
+    background-color: $eventsDayColor;
+    &:hover{
+        background-color: #a2ccec;
+    }
+}
+
+.today{
+
+    background-color: $headerBgColor;
+    .day-detail{
+        font-weight: 600;
+    }
+}
+
+.event-mobile{
+    width: 100%;
+    margin-top: 15px;
+    //padding-left: 25px;
+    .dates{
+        padding-left:15px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .title{
+        font-weight: 600;
+        padding: 5px;
+        background-color: $headerBgColor;
+        min-height: 15px;
+    }
+    .member{        
+        padding: 5px;
+    }
+
+    .desc{
+        padding: 5px;
+        background-color: $headerBgColor;
+    }
+}
