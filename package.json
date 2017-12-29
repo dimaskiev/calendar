@@ -9,8 +9,7 @@
     "scripts": {
         "start": "webpack-dev-server --env development",
         "build": "webpack --env production",
-        "serv": "static build",
-        "test:lint": "eslint . --cache"
+        "serv": "static build"
     },
     "devDependencies": {
         "css-loader": "^0.28.7",
