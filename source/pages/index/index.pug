@@ -30,7 +30,7 @@ block content
                                 .date 25
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                         .day
                             .day-detail
@@ -39,7 +39,7 @@ block content
                                 .date 26
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                         .day
                             .day-detail
@@ -48,7 +48,7 @@ block content
                                 .date 27
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                         .day
                             .day-detail
@@ -57,7 +57,7 @@ block content
                                 .date 28
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                         .day
                             .day-detail
@@ -66,7 +66,7 @@ block content
                                 .date 1
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                         .day.today
                             .day-detail
@@ -75,7 +75,7 @@ block content
                                 .date 2
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                         .day
                             .day-detail
@@ -84,7 +84,7 @@ block content
                                 .date 3
                             .event
                                 .title
-                                .member
+                                .members
                                 .description
                     .row
                         .day
@@ -142,7 +142,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description        
+                                .description
                     .row
                         .day
                             .day-detail
@@ -191,7 +191,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description                                
+                                .description
                         .day
                             .day-detail
                                 .weekday
@@ -199,7 +199,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description        
+                                .description
                     .row
                         .day
                             .day-detail
@@ -216,7 +216,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description                                
+                                .description
                         .day
                             .day-detail
                                 .weekday
@@ -248,7 +248,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description                                
+                                .description
                         .day
                             .day-detail
                                 .weekday
@@ -273,7 +273,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description                                
+                                .description
                         .day
                             .day-detail
                                 .weekday
@@ -297,7 +297,7 @@ block content
                             .event
                                 .title
                                 .members
-                                .description                                
+                                .description
                         .day
                             .day-detail
                                 .weekday
@@ -315,3 +315,13 @@ block content
                                 .members
                                 .description
         .modal-events
+            .span.close
+            .info
+                input(type="text" required placeholder="Событие" autofocus).event
+                input(type="text" placeholder="Дата, месяц, год" disabled).date
+                input(type="text" placeholder="Имена участников").members
+            .details
+                textarea.detail-event(name="",  placeholder="Описание")
+            .buttons
+                button.saveBtn Готово
+                button.deleteBtn Удалить
