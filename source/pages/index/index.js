@@ -1,6 +1,6 @@
 import 'normalize.css';
 import './index.scss';
-console.log('index.js');
+import * as dataSet from '../../common/js/datalib.js';
 
 window.addEventListener('resize', function(){
     if (window.innerWidth > 521){
@@ -9,35 +9,38 @@ window.addEventListener('resize', function(){
     }
 });
 
-function getData(data){
+window.onload = function(){   
+    const day = document.querySelectorAll('.day'); //all day
+    let thisBlock; //this click block
+    const modal = document.querySelector('.modal-events'); //modal window
+    const close = modal.querySelector('.close'); //button clode modal
+    const saveBtn = document.querySelector('.saveBtn'); // button save data
+    const deleteBtn = document.querySelector('.deleteBtn'); // button delete data
     
-    let eventDate = data.children[0].children[2]|| data.children[0].children[1];
-    let month = document.querySelector('.date-month').innerHTML;
-    let year = document.querySelector('.date-year').innerHTML;      
-    let eventTitle = data.children[1].children[0].innerHTML;
-    let eventMembers = data.children[1].children[1].innerHTML;
-    let eventDescription = data.children[1].children[2].innerHTML;
-    let date = `${eventDate.innerHTML} ${month}${year}`;
-    if (window.innerWidth < 521 ){
-        newRowEvents(eventTitle, eventMembers, eventDescription, date);
-    } 
-}
-
-function newRowEvents(title, members, desc, date){
-    let calendar = document.querySelector('.calendar');
-    let isRow = document.querySelector('.event-mobile');  
-    if (!isRow) console.log('not');
-    else isRow.remove();
-    let eventRow = document.createElement('div');
-    eventRow.className = 'event-mobile';
-    eventRow.innerHTML = `<p class="dates">${date}</p><p class="title">Что сделать:  ${title}</p><p class="member">С кем:  ${members}</p><p class="desc">Детали:  ${desc}</p>`;
-    calendar.appendChild(eventRow);
-}
-window.onload = function(){ 
-    let day = document.querySelectorAll('.day');
     day.forEach(function(item, i, day){
         day[i].onclick = function(){
-            getData(this);
+            dataSet.getData(this);            
+            const dataCurrentBlock = dataSet.getDataFromBlock(this);
+            thisBlock = this;
+            dataSet.showModalWindow(dataCurrentBlock, thisBlock);          // show modalWindow 
         };
     });
+
+    saveBtn.addEventListener('click', function(){ 
+        const modalData = dataSet.getDataFromModal();
+        dataSet.saveDataToBlock(thisBlock, modalData); // save Data
+        dataSet.refreshDataAndSetColorDay(thisBlock); // refresh data & set color day
+        modal.classList.remove('open-modal'); // close window
+        
+    },false);
+
+    deleteBtn.addEventListener('click', function(){ 
+        dataSet.deleteDataBlock(thisBlock); // delete  Data
+        dataSet.refreshDataAndSetColorDay(thisBlock); // refresh data & set color day
+
+    },false);
+
+    close.addEventListener('click', function(){    // close Modal Window
+        modal.classList.remove('open-modal');        
+    });   
 };
