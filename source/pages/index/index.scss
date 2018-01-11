@@ -251,23 +251,27 @@
     }
     @include tablet-xs{
         min-height: 85px;
+        max-height: 85px;
 
     }
 
     @include middleTablet{
         min-height: 75px;
+        max-height: 75px;
     }
     @include tabletphone{
         padding: 5px;
 
     }
     @include phone{
-        min-height: 60px;
+        min-height: 65px;
+        max-height: 65px;
 
     }
 
     @include oldphone{
-        min-height: 50px;
+        min-height: 55px;
+        max-height: 55px;
 
     }
 
@@ -333,7 +337,7 @@
            }
 
             @include middleTablet{
-                display: none;
+                opacity: 0;
             }
         }
         .description{
